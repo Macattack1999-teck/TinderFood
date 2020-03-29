@@ -6,7 +6,7 @@ const PlaceDetails = (props) => {
     <div className="container">
       <div className="title">Place Title - {id}</div>
       <p className="place-info">Lorim impsum</p>
-      <p className="rating">5 stars</p>
+      <p className="hours">Hours</p>
     </div>
   )
 }

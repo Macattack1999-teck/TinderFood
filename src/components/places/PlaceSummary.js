@@ -4,8 +4,8 @@ const PlaceSummary = () => {
   return (
     <div className="place-group">
         <span className="title">Place Title</span>
-        <span className="Location">Location</span>
-        <span className="Hours">Hours</span>
+        <span className="location">Location</span>
+        <span className="type">Type</span>
 
         <button>Yes</button>
         <button>No</button>
