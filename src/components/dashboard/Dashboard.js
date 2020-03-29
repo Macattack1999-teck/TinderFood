@@ -1,3 +1,15 @@
-// import React, { Component } from 'react'
+import React, { Component } from 'react'
 
-// class Dashboard extends Component
+import PlaceList from '../places/PlacesList';
+
+class Dashboard extends Component {
+  render() {
+    return (
+      <div className="container">
+          <PlaceList />
+      </div>
+    )
+  }
+}
+
+export default Dashboard;
