@@ -9,9 +9,14 @@ const initState = {
 const placeReducer = (state = initState, action) => {
   switch(action.type) {
     case 'CREATE_PLACE':
-      console.log('created place', action.place)
+      console.log('successfully created place', action.place)
+      return state;
+    case 'CREATE_PLACE_ERROR':
+      console.log('create place error', action.err)
+      return state;
+    default:
+      return state;
   }
-  return state
 }
 
 export default placeReducer

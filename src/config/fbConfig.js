@@ -3,7 +3,7 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 // Initialize Firebase
-var firebaseConfig = {
+export var firebaseConfig = {
   apiKey: "AIzaSyBeqfhdWjQ6pqc7De4FLSTyplzcLq7H9iw",
   authDomain: "tinderfood-83ba7.firebaseapp.com",
   databaseURL: "https://tinderfood-83ba7.firebaseio.com",
@@ -16,4 +16,4 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-export default firebaseConfig;
+export default firebase;
