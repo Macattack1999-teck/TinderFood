@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { createPlace} from '../../store/actions/placeActions'
 
 class CreatePlace extends Component {
   state = {
@@ -17,7 +20,7 @@ class CreatePlace extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state)
+    this.props.createPlace(this.state)
   }
 
   render() {
@@ -66,4 +69,10 @@ class CreatePlace extends Component {
   }
 }
 
-export default CreatePlace
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createPlace: (place) => dispatch(createPlace(place))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CreatePlace)

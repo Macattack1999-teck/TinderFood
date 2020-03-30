@@ -7,6 +7,10 @@ const initState = {
 }
 
 const placeReducer = (state = initState, action) => {
+  switch(action.type) {
+    case 'CREATE_PLACE':
+      console.log('created place', action.place)
+  }
   return state
 }
 
