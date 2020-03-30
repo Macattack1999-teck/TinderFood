@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
 
 import PlaceList from '../places/PlacesList';
-import { connect } from 'react-redux'
 
 class Dashboard extends Component {
   render() {
@@ -16,8 +18,13 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    places: state.place.places
+    places: state.firestore.ordered.places
   }
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'places' }
+  ])
+)(Dashboard)
