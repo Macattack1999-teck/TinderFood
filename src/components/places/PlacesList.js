@@ -2,12 +2,14 @@ import React from 'react'
 
 import PlaceSummary from './PlaceSummary'
 
-const PlaceList = () => {
+const PlaceList = ({places}) => {
   return (
     <div className="container">
-      <PlaceSummary />
-      <PlaceSummary />
-      <PlaceSummary />
+      { places && places.map(place => {
+        return (
+          <PlaceSummary place={place} key={place.id}/>
+        )
+      })}
     </div>
   )
 }

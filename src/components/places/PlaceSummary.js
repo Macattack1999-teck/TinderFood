@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PlaceSummary = () => {
+const PlaceSummary = ({place}) => {
   return (
     <div className="place-group">
-        <span className="title">Place Title</span>
-        <span className="location">Location</span>
-        <span className="type">Type</span>
+        <span className="title">{place.title}</span>
+        <span className="location">{place.location}</span>
+        <span className="type">{place.type}</span>
 
         <button>Yes</button>
         <button>No</button>
