@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import PlaceSummary from './PlaceSummary'
 
@@ -7,7 +8,9 @@ const PlaceList = ({places}) => {
     <div className="container">
       { places && places.map(place => {
         return (
-          <PlaceSummary place={place} key={place.id}/>
+          <Link to={'/place/' + place.id} key={place.id}>
+            <PlaceSummary place={place}/>
+          </Link>
         )
       })}
     </div>
