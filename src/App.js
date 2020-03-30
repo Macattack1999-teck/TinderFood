@@ -7,6 +7,7 @@ import PlaceDetails from './components/places/PlaceDetails'
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreatePlace from './components/places/CreatePlaces';
+import Account from './components/dashboard/Account';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/create" component={CreatePlace} />
+          <Route path="/account" component={Account} />
         </Switch>
       </div>
     </BrowserRouter>
