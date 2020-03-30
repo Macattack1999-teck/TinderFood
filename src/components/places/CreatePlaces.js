@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import { createPlace} from '../../store/actions/placeActions'
 
@@ -24,6 +25,8 @@ class CreatePlace extends Component {
   }
 
   render() {
+    const  { auth } = this.props
+    if (!auth.uid) return <Redirect to='/signin' />
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="signin-form">
@@ -69,10 +72,16 @@ class CreatePlace extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     createPlace: (place) => dispatch(createPlace(place))
   }
 }
 
-export default connect(null, mapDispatchToProps)(CreatePlace)
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePlace)

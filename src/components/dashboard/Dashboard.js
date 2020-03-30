@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
+import { Redirect } from 'react-router-dom'
 
 import PlaceList from '../places/PlacesList';
 
 class Dashboard extends Component {
   render() {
-    const { places } = this.props;
+    const { places, auth } = this.props;
+
+    if (!auth.uid) return <Redirect to='/signin' />
     return (
       <div className="container">
           <PlaceList places={places}/>
@@ -18,7 +21,8 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    places: state.firestore.ordered.places
+    places: state.firestore.ordered.places,
+    auth: state.firebase.auth
   }
 }
 
