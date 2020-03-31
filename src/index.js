@@ -14,7 +14,7 @@ import {
 } from "redux-firestore";
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
-import firebase, { firestore } from "firebase/app";
+import firebase from "firebase/app";
 
 //for render on auth ready
 import { useSelector  } from 'react-redux'

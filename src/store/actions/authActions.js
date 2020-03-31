@@ -45,11 +45,10 @@ export const signUp = (newUser) => {
         }).catch((err) => {
           dispatch({ type: 'SIGNUP_ERROR', err })
         })
-      } 
-    }).then(() => {
-      dispatch({ type: 'USERNAME_TAKEN_ERROR' })
-    })
-    .catch(err => {
+      } else {
+        dispatch({ type: 'USERNAME_TAKEN_ERROR' })
+      }
+    }).catch(err => {
       console.log('Error getting documents', err);
     });
 

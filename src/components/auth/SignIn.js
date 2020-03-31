@@ -18,6 +18,10 @@ class SignIn extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.signIn(this.state)
+    this.setState({
+      email: '',
+      password: ''
+    })
   }
 
   render() {

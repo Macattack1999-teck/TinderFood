@@ -22,6 +22,14 @@ class CreatePlace extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.createPlace(this.state)
+    this.setState({
+      title: '',
+      location: '',
+      descript: '',
+      hours: '',
+      type: ''
+    })
+    this.props.history.push('/')
   }
 
   render() {
