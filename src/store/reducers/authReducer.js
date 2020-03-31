@@ -30,6 +30,12 @@ const authReducer = (state = initState, action) => {
         ...state,
         authError: action.err.message
       }
+    case 'USERNAME_TAKEN_ERROR':
+      console.log('username taken')
+      return {
+        ...state,
+        authError: 'username taken'
+      }
     default:
       return state;
   }

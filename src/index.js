@@ -14,12 +14,11 @@ import {
 } from "redux-firestore";
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
-import firebase from "firebase/app";
+import firebase, { firestore } from "firebase/app";
 
 //for render on auth ready
 import { useSelector  } from 'react-redux'
 import { isLoaded  } from 'react-redux-firebase';
-
 
 
 

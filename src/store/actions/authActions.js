@@ -27,18 +27,32 @@ export const signUp = (newUser) => {
   return (dispatch, getState, {getFirebase, getFirestore}) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
+    const usersRef = firestore.collection("users")
 
-    firebase.auth().createUserWithEmailAndPassword(
-      newUser.email,
-      newUser.password
-    ).then((resp) => {
-      return firestore.collection('users').doc(resp.user.uid).set({
-        userName: newUser.userName
-      })
+    usersRef.where('userName', '==', `${newUser.userName}`).get()
+    .then(snapshot => {
+      if (snapshot.empty) {
+        firebase.auth().createUserWithEmailAndPassword(
+          newUser.email,
+          newUser.password
+        ).then((resp) => {
+          console.log(resp)
+          return firestore.collection('users').doc(resp.user.uid).set({
+            userName: newUser.userName
+          })
+        }).then(() => {
+          dispatch({ type: 'SIGNUP_SUCCESS'})
+        }).catch((err) => {
+          dispatch({ type: 'SIGNUP_ERROR', err })
+        })
+      } 
     }).then(() => {
-      dispatch({ type: 'SIGNUP_SUCCESS'})
-    }).catch((err) => {
-      dispatch({ type: 'SIGNUP_ERROR', err })
+      dispatch({ type: 'USERNAME_TAKEN_ERROR' })
     })
+    .catch(err => {
+      console.log('Error getting documents', err);
+    });
+
   }
 }
+
