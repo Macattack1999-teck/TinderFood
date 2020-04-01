@@ -32,9 +32,9 @@ class SignUp extends Component {
     if (auth.uid) return <Redirect to="/" />
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="signin-form">
+        <form onSubmit={this.handleSubmit} className="signup-form">
           <h5>Sign Up</h5>
-          <div className="input-field">
+          <div className="input-field-group">
             <input 
               type="email" 
               id="email" 

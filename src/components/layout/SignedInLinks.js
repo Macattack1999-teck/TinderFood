@@ -6,9 +6,25 @@ import { signOut} from '../../store/actions/authActions'
 const SignedInLinks = (props) => {
   return (
     <ul className="right-column">
-      <NavLink to='/create'>New Resturant</NavLink>
-      <NavLink to='/signin' onClick={props.signOut}>Log Out</NavLink>
-      <NavLink to='/account'>Account</NavLink>
+      <div>
+        <NavLink  activeClassName="active" to='/addfriend'>Add Friend</NavLink>
+      </div>
+
+      <div>
+        <NavLink  activeClassName="active" to='/friends'>Friends</NavLink>
+      </div>
+
+      <div>
+        <NavLink activeClassName="active" to='/create'>New Resturant</NavLink>
+      </div>
+
+      <div>
+        <NavLink activeClassName="active"to='/account'>Account</NavLink>
+      </div>
+
+      <div>
+        <NavLink  activeClassName="active" to='/signin' onClick={props.signOut}>Log Out</NavLink>
+      </div>
     </ul>
   )
 }

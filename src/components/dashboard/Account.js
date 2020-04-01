@@ -9,8 +9,8 @@ class Dashboard extends Component {
 
     return (
       <div className="container">
-          <div>Email: {auth.email}</div>
-          <div>Username: {profile.userName}</div>
+          <div className="info">Email: {auth.email}</div>
+          <div className="info">Username: {profile.userName}</div>
       </div>
     )
   }

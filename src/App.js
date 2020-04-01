@@ -8,6 +8,8 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreatePlace from './components/places/CreatePlaces';
 import Account from './components/dashboard/Account';
+import Friends from './components/friends/FriendsList'
+import FriendCreate from './components/friends/FriendCreate'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/signup" component={SignUp} />
           <Route path="/create" component={CreatePlace} />
           <Route path="/account" component={Account} />
+          <Route path="/friends" component={Friends} />
+          <Route path="/addfriend" component={FriendCreate} />
         </Switch>
       </div>
     </BrowserRouter>

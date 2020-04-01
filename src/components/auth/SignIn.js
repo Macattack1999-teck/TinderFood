@@ -30,23 +30,28 @@ class SignIn extends Component {
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="signin-form">
-          <h5>Sign In</h5>
-          <div className="input-field">
-            <input 
-              type="email" 
-              id="email" 
-              placeholder="Email" 
-              onChange={this.handleChange} 
-            />
-            <input 
-              type="password" 
-              id="password" 
-              placeholder="Password" 
-              onChange={this.handleChange} 
-            />
+          <h5>Login</h5>
+          <div className="input-field-group">
+            <div className="input-field">
+              <input 
+                type="email" 
+                id="email" 
+                placeholder="Email" 
+                onChange={this.handleChange} 
+              />
+            </div>
+
+            <div className="input-field">
+              <input 
+                type="password" 
+                id="password" 
+                placeholder="Password" 
+                onChange={this.handleChange} 
+              />
+            </div>
           </div>
           <div className="button-wrapper">
-            <button className="btn">Sign In!</button>
+            <button className="btn">Login!</button>
             <div className="red-text">
               { authError ? <p>{authError}</p> : null}
             </div>
