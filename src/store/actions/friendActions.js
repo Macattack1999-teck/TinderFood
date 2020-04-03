@@ -4,7 +4,7 @@ export const createFriend = (friend) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
     const usersRef = firestore.collection("users")
-
+    
 
     usersRef.where('userName', '==', `${friend.userName}`).get()
     .then(snapshot => {
@@ -27,3 +27,7 @@ export const createFriend = (friend) => {
     });
   }
 }
+
+// const firestore = getFirestore();
+//     firestore.collection('places').add({
+//       ...place

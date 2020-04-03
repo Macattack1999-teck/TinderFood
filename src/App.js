@@ -8,7 +8,7 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreatePlace from './components/places/CreatePlaces';
 import Account from './components/dashboard/Account';
-import Friends from './components/friends/FriendsList'
+import Friends from './components/friends/FriendsDashboard'
 import FriendCreate from './components/friends/FriendCreate'
 
 function App() {

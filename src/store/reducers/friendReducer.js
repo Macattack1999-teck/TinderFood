@@ -1,6 +1,11 @@
 const initState = {
   usernameError: null,
-  friendship: null
+  friendship: null,
+  userfriends: [
+    {id: 1, friends: [{id: 1, userName: 'jeff'}, {id: 2, userName: 'bezos'}, {id: 3, userName: 'sucks'}]},
+    {id: 2, friends: [{id: 1, userName: 'someone'}, {id: 2, userName: 'else'}, {id: 3, userName: 'sucks'}]},
+    {id: 3, friends: [{id: 1, userName: 'you'}, {id: 2, userName: 'also'}, {id: 3, userName: 'suck'}]},
+  ]
 }
 
 const friendReducer = (state = initState, action) => {
